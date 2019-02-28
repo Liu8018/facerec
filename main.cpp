@@ -78,7 +78,7 @@ int main(int argc, char ** argv)
 
     //初始化：窗口名
     const std::string WINDOW_NAME = "FaceDetection";
-    cv::namedWindow(WINDOW_NAME, 1);
+    cv::namedWindow(WINDOW_NAME, 0);
 
     for (;;)
     {

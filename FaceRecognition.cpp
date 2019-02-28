@@ -36,7 +36,7 @@ bool FaceRecognition::recognize(const cv::Mat &src, const dlib::full_object_dete
     }
     //std::cout<<"---"<<std::endl;
     
-    if(minDistance < 0.45)
+    if(minDistance < 0.40)
     {
         name = nearestFaceName;
         return true;
