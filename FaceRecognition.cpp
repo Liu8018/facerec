@@ -12,9 +12,6 @@ FaceRecognition::FaceRecognition()
 
 bool FaceRecognition::recognize(const cv::Mat &src, const dlib::full_object_detection &shape, std::string &name)
 {
-    if(m_faceDescriptorsLib.empty())
-        updatedb(m_faceDescriptorsLib);
-    
     //提取描述子
     dlib::matrix<float,0,1> faceDescriptor;
     getDescriptor(src,shape,faceDescriptor);
@@ -57,4 +54,9 @@ void FaceRecognition::getDescriptor(const cv::Mat &src, const dlib::full_object_
     dlib::extract_image_chip(dimg, dlib::get_face_chip_details(shape,150,0.25), face_chip);
     
     faceDescriptor = m_net(face_chip);
+}
+
+void FaceRecognition::init_updatedb()
+{
+    updatedb(m_faceDescriptorsLib);
 }

@@ -75,6 +75,7 @@ int main(int argc, char ** argv)
     
     //初始化：人脸识别
     FaceRecognition rec;
+    rec.init_updatedb();
 
     //初始化：窗口名
     const std::string WINDOW_NAME = "FaceDetection";
